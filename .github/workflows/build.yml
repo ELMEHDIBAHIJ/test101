@@ -27,10 +27,12 @@ jobs:
             - name: Package application
               run: mvn package -DskipTests
 
+            - name: List contents of target directory (Debugging)
+              run: ls -la target/  
+
             - name: Upload artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: main-jar
                   path: target/*.jar
-
     
